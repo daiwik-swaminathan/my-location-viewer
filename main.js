@@ -10,6 +10,7 @@ import Overlay from 'ol/Overlay';
 const calPoly = [-120.6596, 35.2828]; // Cal Poly
 const losAngeles = [-118.2437, 34.0522]; // Los Angeles
 const sanFrancisco = [-122.4194, 37.7749]; // San Francisco
+const sacramento = [-121.4944, 38.5816]; // Sacramento
 
 // Create the map
 const map = new Map({
@@ -25,27 +26,10 @@ const map = new Map({
   })
 });
 
-// Add Cal Poly marker
-// const calPolyMarker = document.createElement('div');
-// calPolyMarker.className = 'marker';
-// calPolyMarker.style.backgroundColor = '#FF0000'; // Bright red
-// calPolyMarker.style.width = '20px';
-// calPolyMarker.style.height = '20px';
-// calPolyMarker.style.borderRadius = '50%';
-// calPolyMarker.style.position = 'absolute';
-
-// const calPolyOverlay = new Overlay({
-//   position: fromLonLat(calPoly),
-//   positioning: 'center-center',
-//   element: calPolyMarker,
-//   stopEvent: false
-// });
-// map.addOverlay(calPolyOverlay);
-
 // Add Los Angeles marker
 const laMarker = document.createElement('div');
 laMarker.className = 'marker';
-laMarker.style.backgroundColor = '#FF6666'; // Lighter red
+laMarker.style.backgroundColor = '#CC0000'; // Dark red
 laMarker.style.width = '20px';
 laMarker.style.height = '20px';
 laMarker.style.borderRadius = '50%';
@@ -62,7 +46,7 @@ map.addOverlay(laOverlay);
 // Add San Francisco marker
 const sfMarker = document.createElement('div');
 sfMarker.className = 'marker';
-sfMarker.style.backgroundColor = '#FF9999'; // Even lighter red
+sfMarker.style.backgroundColor = '#990000'; // Darkest red
 sfMarker.style.width = '20px';
 sfMarker.style.height = '20px';
 sfMarker.style.borderRadius = '50%';
@@ -75,3 +59,20 @@ const sfOverlay = new Overlay({
   stopEvent: false
 });
 map.addOverlay(sfOverlay);
+
+// Add Sacramento marker
+const sacMarker = document.createElement('div');
+sacMarker.className = 'marker';
+sacMarker.style.backgroundColor = '#FFCCCC'; // Light red
+sacMarker.style.width = '20px';
+sacMarker.style.height = '20px';
+sacMarker.style.borderRadius = '50%';
+sacMarker.style.position = 'absolute';
+
+const sacOverlay = new Overlay({
+  position: fromLonLat(sacramento),
+  positioning: 'center-center',
+  element: sacMarker,
+  stopEvent: false
+});
+map.addOverlay(sacOverlay);
